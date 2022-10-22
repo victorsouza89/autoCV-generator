@@ -1,0 +1,124 @@
+basic_info:
+  photo: photo.jpeg
+  name: Victor Fernando \\ Lopes de Souza
+  jobtitle: Engineering Student at \\ CentraleSupélec
+
+more_info:
+  - date_en: 8 July 1999, Brazilian
+    icon: Mundus
+  - phone: +33 0665923179
+    icon: Telefon
+  - mail: victorflosouza@gmail.com
+    icon: Letter
+    href: mail
+  - linkedin: linkedin.com/in/victorflosouza
+    icon: Info
+    href: site
+  - github: github.com/victorsouza89
+    icon: Moon
+    href: site
+  - address: 1, rue Joliot Curie \newline 91190 Gif-Sur-Yvette, France
+    icon: Letter
+
+about:
+  generic_en: |
+    Passionate for innovation and technology.
+    Interested in approaching complex problems and grasping complex concepts.
+    Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning,
+    System Modeling and Control, Philosophy, Quantum Physics, Financial Markets,
+    Cybersecurity, Blockchain and Discrete Automation.
+
+skills:
+  generic: |
+    Multiple experiences on \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt and BASIC.
+    \\ ~ \\
+    Experience on \textbf{Web developing} using PHP, HTML, CSS, SQL and \textbf{JavaScript}.
+    \\ ~ \\
+    Experience on \textbf{data analysis} and neural nets using \textbf{Pandas}, Numpy, Tensforflow and \textbf{Keras}.
+    \\ ~ \\
+    Good \textbf{Mathematical Background} and knowledge in \textbf{Control's Systems}, Automata and \textbf{Discrete-Event's Systems}.
+    \\ ~ \\
+    \textbf{Languages:} Portuguese (mother tongue), English, French and Spanish.
+  
+sections:
+- name: Education
+  items:
+  - institution: Université Paris-Saclay
+    course: Master in Systems, Signals and Image Processing
+    location: Gif-Sur-Yvette (FR)
+    when: 2022-2023
+    description: |
+      .
+
+  - institution: CentraleSupélec
+    course: Engineering, with mention in Control
+    location: Gif-Sur-Yvette (FR)
+    when: 2021-2023
+    description: |
+      Program focused on Critical Systems, Formal Verification, Formal Systems and Model Checking;
+      Classical and Neoclassical Economics; Optimization and Machine Learning; Project Management;
+      Astrophysics, Quantum Physics, Relativity and Particle Physics; Advanced Probabilities, Stochastic Finance,
+      Financial Markets and Risk Modelling; Cryptology and Cryptography; Modeling, Analysis and Control of Complex Systems.
+
+  - institution: UFSC - Universidade Federal de Santa Catarina
+    course: Control and Automation Engineering \\ PAM - Advanced Mathematics Program
+    location: Florianópolis (BR)
+    when: 2018-2023
+    description: |
+      The regular program is focused on Signals, Systems, and Classical and Modern Control Theory;
+      Informatics, Data Structures, Software Engineering, Algorithms and Artificial Intelligence; 
+      Discrete Automation and Discrete Event Systems.
+
+      Followed also the PAM (Advanced Mathematics Program), focused on Advanced Calculus,
+      Linear Algebra, ODEs, Real Analysis, Complex Analysis, Functional Analysis, Topology and Abstract Algebra.
+
+  - institution: Paris IV - Sorbonne Université
+    course: Bachelor's degree in Philosophy
+    location: Paris (FR)
+    when: 2021-2022
+    description: |
+      Program focused on Metaphysics, Philosophy of Art, Philosophy of Science,
+      Comparative Philosophy, Political Philosophy, Modern Philosophy and Contemporary Philosophy.
+
+  - institution: IFSC - Instituto Federal de Santa Catarina
+    course: Engineering Technician in Electronics
+    location: Florianópolis (BR)
+    when: 2014-2017
+    description: |
+      The technical/vocational program is focused on Electricity, Digital and Analog Electronics, Operational Amplifiers,
+      Computers Architecture, Power Electronics, Microcontrollers and Embedded Systems Programming.
+
+- name: Work Experience
+  items:
+
+  - title: Typographius Inc.
+    subtitle: Assosiate Placeholder
+    location: Berlin, Germany
+    from:
+      month: 6
+      year: 2018
+    to: Present
+    description:
+    - Subsections in experience and education can optionally have extended descriptions.
+    - An empty "to" date defaults to "Present".
+
+  - logo: img/company-logo.png
+    from:
+      month: 6
+      year: 2016
+    to:
+      month: 6
+      year: 2018
+    description:
+    - Logo images can also be used in the place of titles.
+    - Image paths are specified relative to the yaml file.
+    - They are read and embedded into the HTML in Base64 format, so the generated file can be viewed by itself without carrying around static assets.
+
+  - title: Institute of Typography
+    logo: img/bulb.png
+    subtitle: Placeholder Engineering
+    location: Cambridge, UK
+    description: Logos can also be used in combination with a titles.
+    from:
+      month: 9
+      year: 2014
