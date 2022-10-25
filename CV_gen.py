@@ -1,5 +1,6 @@
 import yaml
-from pylatex import Document, Section, NoEscape
+from pylatex import Document, Section, LineBreak
+from pylatex.utils import italic, NoEscape
 
 def define_layout(templatecv, data_cv):
     doc = []
@@ -356,10 +357,10 @@ def find(d, tag):
 
 if __name__ == '__main__':
     with open('cv_data.yml', 'r', encoding='utf-8') as f:
-        language = "_en"
+        #language = "_en"
         data_cv = yaml.safe_load(f)
 
-        find(data_cv, language)
+        #find(data_cv, language)
         #exit()
 
         templatecv = "templatecv"
@@ -372,77 +373,34 @@ if __name__ == '__main__':
 
         fill_cv(doc, data_cv)
 
+        sections = {d['type']:d for d in data_cv['sections']}
+        order = ['education', 'work', 'projects', 'awards']
+        sections = [sections[k] for k in order]
+        for d in sections:
+            with doc.create(Section(d['name'], numbering=False)):
+                extra = ''
+                if d['type'] in ['awards']:
+                    extra = 'short'
 
+                the_list = r"\begin{twenty"+extra+"}\n "
+                for i in d['items']:
 
-        with doc.create(Section('Education', numbering=False)):
-            the_list = r"""
-            \begin{twenty} % Environment for a list with descriptions
-                \twentyitem{2022-2023}{Université Paris-Saclay}{Gif-Sur-Yvette (FRA)}{Master in Systems, Signals and Image Processing}
-                \twentyitem{2021-2023}{CentraleSupélec}{Gif-Sur-Yvette (FRA)}{Engineering, with mention in Control}
-                \twentyitem{2018-2023}{UFSC - Universidade Federal de Santa Catarina}{Florianópolis (BRA)}{Control and Automation Engineering \\ PAM - Advanced Mathematics Program}
-                \twentyitem{2021-2022}{Paris IV - Sorbonne Université}{Paris (FRA)}{Bachelor's degree in Philosophy}
-                \twentyitem{2014-2017}{IFSC - Instituto Federal de Santa Catarina}{Florianópolis (BRA)}{Engineering Technician in Electronics}
-                %\twentyitem{<dates>}{<title>}{<location>}{<description>}
-            \end{twenty}
-            """
-            doc.append(NoEscape(the_list))
+                    if d['type']=='education':
+                        i['title']=i['institution']
+                        i['description']=i['course']
+                    elif d['type']=='work':
+                        i['description']= r"\textit{"+i['subtitle']+r"} \\ "+ i['short_description']
+                    elif d['type']=='projects':
+                        i['description']= i['short_description']
+                    elif d['type']=='awards':
+                        i['description']= i['short_description']
 
+                    if extra == 'short':
+                        the_list += r"\twentyitem"+extra+"{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['description']+"}\n"
+                    else:
+                        the_list += r"\twentyitem{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['location']+r"}{"+i['description']+"}\n"
+                the_list+=r"\end{twenty"+extra+"} \n"
+                doc.append(NoEscape(the_list))
 
-        resto = r"""
-        
-    \section*{Work Experience}
-
-    \begin{twenty} % Environment for a list with descriptions
-        \twentyitem{2020-2021}{Student Researcher in Neural Nets}{Florianópolis (BRA)}{\textit{at EMBRAPII, in partnership with Central Energia (R\&D on trading)} \\
-        Worked on building, training, and evaluating LSTM networks regarding the prediction of precipitation data for energy trading
-        }
-        
-        \twentyitem{2018-2021}{Student Researcher in Algebraic Topology}{Florianópolis (BRA)}{\textit{at IMPA (Brazilian Institute of Pure and Applied Mathematics)} \\
-        Research on advanced topics related to Geometric Group Theory
-        }
-        
-        \twentyitem{2018–2019}{Assistant Professor on Calculus}{Florianópolis (BRA)}{\textit{at the Mathematics Department, UFSC} \\
-        Hosted office hours to assist undergraduate students
-        }
-        
-        \twentyitem{2016–2017}{Intern as Web Developer}{Florianópolis (BRA)}{\textit{at Oi S.A. (third largest telecommunication company in Latin America)} \\
-        Developed PHP, Shell, BASIC and Kernel scripts to automate tasks related to the management, monitoring and control of the backbone
-        }
-        %\twentyitem{<dates>}{<title>}{<location>}{<description>}
-    \end{twenty}
-
-
-
-    \section*{Projects}
-
-    \begin{twentyshort} % Environment for a short list with no descriptions
-        \twentyitem{2022}{Training Neural Networks with Kalman Filters}{Gif-Sur-Yvette (FRA)}{Implementation of modern control methods for training Neural Nets and use of the Kalman filter as an optimization algorithmx}
-        
-        \twentyitem{2022}{Exploring portfolio optimization methods, with BNP}{Gif-Sur-Yvette (FRA)}{Construction, Implementation and Evaluation of different portfolio allocation methods}
-
-        \twentyitem{2022}{System for inform on cancer, with Health Guide AI}{Gif-Sur-Yvette (FRA)}{Testing of different recommendation algorithms for this purpose}
-
-        \twentyitem{2021-2022}{Neural Nets: Attacks and Robustness, with SystemX}{Gif-Sur-Yvette (FRA)}{Study and implementation of some attack methods on NN systems}
-        %\twentyitemshort{<dates>}{<title/description>}
-    \end{twentyshort}
-
-
-
-    \section*{Honours and Awards}
-
-    \begin{twentyshort} % Environment for a short list with no descriptions
-        \twentyitemshort{2021}{BRAFITEC}{Merit Scholarship for Double Degree in France}
-        \twentyitemshort{2019}{Qualified to Final Phase}{OBMU (National University Maths Olympiad)}
-        \twentyitemshort{2018}{Freshman Award}{OEI (Organization of Ibero-American States)}
-        \twentyitemshort{2017}{Silver Medal}{OBMEP (National High School Mathematics Olympiad)}
-        \twentyitemshort{2016}{Silver Medal}{OBMEP (National High School Mathematics Olympiad)}
-        \twentyitemshort{2014}{Honourable Mention}{OBMEP (National High School Maths Olympiad)}
-        %\twentyitemshort{<dates>}{<title}{description>}
-    \end{twentyshort}
-        """
-        doc.append(NoEscape(resto))
-
-    
-
-
+  
     doc.generate_pdf('full', clean_tex=False, compiler='pdflatex')
