@@ -1,20 +1,20 @@
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Created based on the Twenty Seconds Resume/CV
-% LaTeX Template
-% Version 1.1 (8/1/17)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% The MIT License (see included LICENSE file)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Created based on the Twenty Seconds Resume/CV
+    % LaTeX Template
+    % Version 1.1 (8/1/17)
+    %
+    % This template has been downloaded from:
+    % http://www.LaTeXTemplates.com
+    %
+    % Original author:
+    % Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+    % Vel (vel@LaTeXTemplates.com)
+    %
+    % License:
+    % The MIT License (see included LICENSE file)
+    %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
 
     \ProvidesClass{templatecv}[2017/01/08 CV class]
@@ -81,7 +81,6 @@
             \newcommand{\cvmail}[1]{\renewcommand{\cvmail}{#1}}
             \newcommand{\cvlinkedin}[1]{\renewcommand{\cvlinkedin}{#1}}
             \newcommand{\cvgithub}[1]{\renewcommand{\cvgithub}{#1}}
-            \newcommand{\cvaddress}[1]{\renewcommand{\cvaddress}{#1}}
             
     %\newcommand{\cvdate}[1]{\renewcommand{\cvdate}{#1}}
 
@@ -114,7 +113,7 @@
     
 
     
-\newcommand{\makeprofile}{
+    \newcommand{\makeprofile}{
 	\begin{tikzpicture}[remember picture,overlay]
    		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
 	\end{tikzpicture}
@@ -150,8 +149,7 @@
 \ifthenelse{\equal{\cvphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvphone\\}
 \ifthenelse{\equal{\cvmail}{}}{}{\textsc{\Large\icon{\Letter}} & \href{mailto:\cvmail}{\cvmail}\\}
 \ifthenelse{\equal{\cvlinkedin}{}}{}{\textsc{\Large\icon{\Info}} & \href{http://www.\cvlinkedin}{\cvlinkedin}\\}
-\ifthenelse{\equal{\cvgithub}{}}{}{\textsc{\Large\icon{\Moon}} & \href{http://www.\cvgithub}{\cvgithub}\\}
-\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress}
+\ifthenelse{\equal{\cvgithub}{}}{}{\textsc{\Large\icon{\Moon}} & \href{http://www.\cvgithub}{\cvgithub}}
                 %\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
             \end{tabular}    
 

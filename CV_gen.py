@@ -6,22 +6,22 @@ def define_layout(templatecv, data_cv):
     doc = []
 
     credits = r"""
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Created based on the Twenty Seconds Resume/CV
-% LaTeX Template
-% Version 1.1 (8/1/17)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% The MIT License (see included LICENSE file)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Created based on the Twenty Seconds Resume/CV
+    % LaTeX Template
+    % Version 1.1 (8/1/17)
+    %
+    % This template has been downloaded from:
+    % http://www.LaTeXTemplates.com
+    %
+    % Original author:
+    % Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+    % Vel (vel@LaTeXTemplates.com)
+    %
+    % License:
+    % The MIT License (see included LICENSE file)
+    %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     """
     doc.append(NoEscape(credits))
 
@@ -131,7 +131,7 @@ def define_layout(templatecv, data_cv):
 
     sidebar_layout = r"""
     
-\newcommand{\makeprofile}{
+    \newcommand{\makeprofile}{
 	\begin{tikzpicture}[remember picture,overlay]
    		\node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
 	\end{tikzpicture}
@@ -334,6 +334,34 @@ def fill_cv(doc, data_cv):
     doc.append(NoEscape(r"\skillstext{"+skills+"}"))
     doc.append(NoEscape(r"\makeprofile"))
 
+    for dd in data_cv['sections']:
+        with doc.create(Section(dd['name'], numbering=False)):
+            extra = ''
+            if dd['type'] in ['awards']:
+                extra = 'short'
+
+            the_list = r"\begin{twenty"+extra+"}\n "
+            for i in dd['items']:
+
+                if dd['type']=='education':
+                    i['title']=i['institution']
+                    i['description']=i['course']
+                elif dd['type']=='work':
+                    i['description']= r"\textit{"+i['subtitle']+r"} \\ "+ i['short_description']
+                elif dd['type']=='projects':
+                    i['description']= i['short_description']
+                elif dd['type']=='awards':
+                    i['description']= i['short_description']
+
+                if extra == 'short':
+                    the_list += r"\twentyitem"+extra+"{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['description']+"}\n"
+                else:
+                    the_list += r"\twentyitem{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['location']+r"}{"+i['description']+"}\n"
+            the_list+=r"\end{twenty"+extra+"} \n"
+            doc.append(NoEscape(the_list))
+
+
+
 def find(d, tag):
     for k, v in list(d.items()):
         if isinstance(v, dict):
@@ -355,52 +383,37 @@ def find(d, tag):
             d[k[:-3]] = d.pop(k)
             #d = dict(reversed(d.items()))
 
-if __name__ == '__main__':
-    with open('cv_data.yml', 'r', encoding='utf-8') as f:
-        #language = "_en"
-        data_cv = yaml.safe_load(f)
 
-        #find(data_cv, language)
-        #exit()
+def generate_cv(language, mode, order_sections, order_info):
+    #order_info = ['date', 'phone', 'mail', 'address', 'linkedin', 'github']
+
+    with open('cv_data'+language+'.yml', 'r', encoding='utf-8') as f:
+        data_cv = yaml.safe_load(f)
+        sections = {d['type']:d for d in data_cv['more_info']}
+        data_cv['more_info'] = [sections[k] for k in order_info]
 
         templatecv = "templatecv"
         define_layout(templatecv, data_cv)
     
         doc = Document(documentclass=templatecv, lmodern=False, fontenc=None, inputenc=None, textcomp=False, page_numbers=False)
 
-        data_cv['about'] = data_cv['about']['generic']
-        data_cv['skills'] = data_cv['skills']['generic']        
+        data_cv['about'] = data_cv['about'][mode]
+        data_cv['skills'] = data_cv['skills'][mode]        
+
+        sections = {d['type']:d for d in data_cv['sections']}
+        data_cv['sections'] = [sections[k] for k in order_sections]
 
         fill_cv(doc, data_cv)
 
-        sections = {d['type']:d for d in data_cv['sections']}
-        order = ['education', 'work', 'projects', 'awards']
-        sections = [sections[k] for k in order]
-        for d in sections:
-            with doc.create(Section(d['name'], numbering=False)):
-                extra = ''
-                if d['type'] in ['awards']:
-                    extra = 'short'
-
-                the_list = r"\begin{twenty"+extra+"}\n "
-                for i in d['items']:
-
-                    if d['type']=='education':
-                        i['title']=i['institution']
-                        i['description']=i['course']
-                    elif d['type']=='work':
-                        i['description']= r"\textit{"+i['subtitle']+r"} \\ "+ i['short_description']
-                    elif d['type']=='projects':
-                        i['description']= i['short_description']
-                    elif d['type']=='awards':
-                        i['description']= i['short_description']
-
-                    if extra == 'short':
-                        the_list += r"\twentyitem"+extra+"{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['description']+"}\n"
-                    else:
-                        the_list += r"\twentyitem{"+str(i['when'])+r"}{"+i['title']+r"}{"+i['location']+r"}{"+i['description']+"}\n"
-                the_list+=r"\end{twenty"+extra+"} \n"
-                doc.append(NoEscape(the_list))
-
   
-    doc.generate_pdf('full', clean_tex=False, compiler='pdflatex')
+    doc.generate_pdf('cv_'+mode+language, clean_tex=False, compiler='pdflatex')
+
+if __name__ == '__main__':
+    languages = ["_en"]
+    modes = ["generic", "comp", "controle", "math"]
+    order_sections = ['education', 'work', 'projects', 'awards']
+    order_info = ['date', 'phone', 'mail', 'linkedin', 'github']
+    
+    for language in languages:
+        for mode in modes:
+            generate_cv(language, mode, order_sections, order_info)
