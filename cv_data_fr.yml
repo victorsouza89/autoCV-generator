@@ -112,29 +112,29 @@ sections:
 - name: Expérience Professionnelle
   type: work
   items:
-  - title: Student Researcher in Neural Nets
-    subtitle: at EMBRAPII, in partnership with Central Energia (R\&D on trading)
+  - title: Chercheur étudiant en Neural Networks
+    subtitle: EMBRAPII, en partenariat avec Central Energia (R\&D sur trading)
     location: Florianópolis (BR)
     when: 2020-2021
-    short_description: Worked on building, training, and evaluating LSTM networks regarding the prediction of precipitation data for energy trading
+    short_description: Travail sur la construction, l'entraînement et l'évaluation de réseaux LSTM concernant la prédiction de données de précipitations
 
-  - title: Student Researcher in Algebraic Topology
-    subtitle: at IMPA (Brazilian Institute of Pure and Applied Mathematics)
+  - title: Chercheur étudiant en Topologie Algébrique
+    subtitle: IMPA (Institut brésilien de mathématiques pures et appliquées)
     location: Florianópolis (BR)
     when: 2018-2021
-    short_description: Research on advanced topics related to Geometric Group Theory
+    short_description: Recherche sur des sujets liés à la théorie géométrique des groupes
     
-  - title: Calculus Teaching Assistant
-    subtitle: at the Mathematics Department, UFSC
+  - title: Professeur adjoint de calcul
+    subtitle: Département de mathématiques, UFSC
     location: Florianópolis (BR)
     when: 2018–2019
-    short_description: Developed PHP, Shell, BASIC and Kernel scripts to automate tasks related to the management, monitoring and control of the backbone
+    short_description: Organisation d'heures de bureau pour aider les étudiants
     
-  - title: Intern as Web Developer
-    subtitle: at Oi S.A. (third largest telecommunication company in Latin America)
+  - title: Stagiaire en Développement Web
+    subtitle: Oi S.A. (3me plus grand télécom d'Amérique latine)
     location: Florianópolis (BR)
     when: 2016–2017
-    short_description: Developed PHP, Shell, BASIC and Kernel scripts to automate tasks related to the management, monitoring and control of the backbone
+    short_description: Développement de scripts PHP, Shell et BASIC pour automatiser des tâches liées à la gestion et au contrôle du backbone
     
 
 
@@ -142,25 +142,25 @@ sections:
 - name: Projets
   type: projects
   items:
-  - title: Training Neural Networks with Kalman Filters
+  - title: Entraînement de Neural Nets avec le filtre de Kalman
     location: Gif-Sur-Yvette (FR)
     when: 2022
-    short_description: Implementation of modern control methods for training Neural Nets and use of the Kalman filter as an optimization algorithm
+    short_description: Mise en œuvre de méthodes de contrôle moderne pour l'entraînement de réseaux de neurones en regardant l'optimisation
 
-  - title: Exploring portfolio optimization methods, with BNP
+  - title: Exploration des méthodes d'optimisation, avec BNP
     location: Gif-Sur-Yvette (FR)
     when: 2022
-    short_description: Construction, Implementation and Evaluation of different portfolio allocation methods
+    short_description: Mise en œuvre de différentes méthodes d'allocation de portefeuille
 
-  - title: System for inform on cancer, with Health Guide AI
+  - title: Système d'information sur cancer, avec HealthG AI
     location: Gif-Sur-Yvette (FR)
     when: 2022
-    short_description: Testing of different recommendation algorithms for this purpose
+    short_description: Test de différents algorithmes de recommandation automatique
 
-  - title: 'Neural Nets: Attacks and Robustness, with SystemX'
+  - title: 'Neural Nets : attaques et robustesse, avec SystemX'
     location: Gif-Sur-Yvette (FR)
     when: 2021-2022
-    short_description: Study and implementation of some attack methods on NN systems
+    short_description: Étude et implémentation de méthodes d'attaque sur des NN
 
 
 
@@ -170,24 +170,24 @@ sections:
   items:
   - title: BRAFITEC
     when: 2021
-    short_description: Merit Scholarship for Double Degree in France
+    short_description: Bourse de mérite pour un Double Diplôme en France
 
-  - title: Qualified to Final Phase
+  - title: Qualifié à la phase finale
     when: 2019
-    short_description: OBMU (National University Maths Olympiad)
+    short_description: OBMU (Olymp. Superieur de Math.)
 
-  - title: Freshman Award
+  - title: Prix du jeune diplômé
     when: 2018
-    short_description: OEI (Organization of Ibero-American States)
+    short_description: OEI (Org. des États ibéro-américains)
 
-  - title: Silver Medal
+  - title: Médaille d'argent
     when: 2017
-    short_description: OBMEP (National High School Mathematics Olympiad)
+    short_description: OBMEP (Olympiade de mathématiques des lycées)
 
-  - title: Silver Medal
+  - title: Médaille d'argent
     when: 2016
-    short_description: OBMEP (National High School Mathematics Olympiad)
+    short_description: OBMEP (Olympiade de mathématiques des lycées)
 
-  - title: Honourable Mention
+  - title: Mention honorable
     when: 2014
-    short_description: OBMEP (National High School Maths Olympiad)
+    short_description: OBMEP (Olymp. de mathématiques des lycées)

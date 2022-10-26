@@ -347,7 +347,7 @@ def fill_cv(doc, data_cv):
                     i['title']=i['institution']
                     i['description']=i['course']
                 elif dd['type']=='work':
-                    i['description']= r"\textit{"+i['subtitle']+r"} \\ "+ i['short_description']
+                    i['description']= r"\textit{\textcolor{gray}{"+i['subtitle']+r"}} \\ "+ i['short_description']
                 elif dd['type']=='projects':
                     i['description']= i['short_description']
                 elif dd['type']=='awards':
