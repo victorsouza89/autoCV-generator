@@ -1,4 +1,4 @@
-import yaml
+import yaml, os
 from pylatex import Document, Section, LineBreak
 from pylatex.utils import italic, NoEscape
 
@@ -384,7 +384,7 @@ def find(d, tag):
             #d = dict(reversed(d.items()))
 
 
-def generate_cv(language, mode, order_sections, order_info):
+def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
     #order_info = ['date', 'phone', 'mail', 'address', 'linkedin', 'github']
 
     with open('cv_data'+language+'.yml', 'r', encoding='utf-8') as f:
@@ -406,7 +406,7 @@ def generate_cv(language, mode, order_sections, order_info):
         fill_cv(doc, data_cv)
 
   
-    doc.generate_pdf('cv_'+mode+language, clean_tex=False, compiler='pdflatex')
+    doc.generate_pdf('cv_'+mode+language, clean_tex=clean_tex, compiler='pdflatex')
 
 if __name__ == '__main__':
     languages = ["_en"]
@@ -417,3 +417,4 @@ if __name__ == '__main__':
     for language in languages:
         for mode in modes:
             generate_cv(language, mode, order_sections, order_info)
+            os.remove("templatecv.cls")
