@@ -88,12 +88,12 @@ sections:
     when: 2022-2023
     
   - institution: CentraleSupélec
-    course: Ingénierie, avec mention en Contrôle
+    course: Ingénierie, mention Control Engineering
     location: Gif-Sur-Yvette (FR)
     when: 2021-2023
 
   - institution: UFSC - Universidade Federal de Santa Catarina
-    course: Ingénierie du contrôle et de l'automatisation \\ PAM - Programme de mathématiques avancées
+    course: Ingénierie en Contrôle Commande et Automatismes \\ PAM - Programme de Mathématiques Avancées
     location: Florianópolis (BR)
     when: 2018-2023
 
