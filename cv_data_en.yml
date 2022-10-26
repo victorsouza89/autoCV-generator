@@ -27,6 +27,8 @@ more_info:
     type: address
 
 about:
+  name: About Me
+
   generic: |
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
     Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning, System Modeling and Control, Philosophy, Quantum Physics, Financial Markets, Cybersecurity, Blockchain and Discrete Automation.
@@ -39,24 +41,23 @@ about:
     Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning and Cybersecurity.
 
   controle: | # Controle Teórico e Sistemas Complexos
-    Aaa
+    Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
+    \\ ~ \\
+    Looking for a final year internship starting in May 2023. 
+    \\ ~ \\
+    Enthusiast of Mathematics, System Modeling, Control Systems and Discrete Automation.
 
   math: | # Mathematical Modeling, Blockchain and Finance
-    Aaa
+    Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
+    \\ ~ \\
+    Looking for a final year internship starting in May 2023. 
+    \\ ~ \\
+    Enthusiast of Mathematics, Stochastic Systems, System Modeling, Financial Markets and Blockchain
 
 skills:
+  name: Skills
+
   generic: |
-    Multiple experiences on \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt and BASIC.
-    \\ ~ \\
-    Experience on \textbf{Web developing} using PHP, HTML, CSS, SQL and \textbf{JavaScript}.
-    \\ ~ \\
-    Experience on \textbf{data analysis} and neural nets using \textbf{Pandas}, Numpy, Tensforflow and \textbf{Keras}.
-    \\ ~ \\
-    Good \textbf{Mathematical Background} and knowledge in \textbf{Control's Systems}, Automata and \textbf{Discrete-Event's Systems}.
-    \\ ~ \\
-    \textbf{Languages:} Portuguese (mother tongue), English, French and Spanish.
-  
-  comp: | # IA et ML et Cybersécurité
     Multiple experiences on \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt and BASIC.
     \\ ~ \\
     Experience on \textbf{Web developing} using PHP, HTML, CSS, SQL and \textbf{JavaScript}.
@@ -68,10 +69,15 @@ skills:
     \textbf{Languages:} Portuguese (mother tongue), English, French and Spanish.
 
   controle: | # Controle Teórico e Sistemas Complexos
-    Aaa
-
-  math: | # Mathematical Modeling, Blockchain and Finance
-    Aaa
+    Good \textbf{Mathematical Background} and knowledge in \textbf{Control's Systems}, Automata and \textbf{Discrete-Event's Systems}.
+    \\ ~ \\
+    Multiple experiences on \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt and BASIC.
+    \\ ~ \\
+    Experience on \textbf{data analysis} and neural nets using \textbf{Pandas}, Numpy, Tensforflow and \textbf{Keras}.
+    \\ ~ \\
+    Experience on \textbf{Web developing} using PHP, HTML, CSS, SQL and \textbf{JavaScript}.
+    \\ ~ \\
+    \textbf{Languages:} Portuguese (mother tongue), English, French and Spanish.
 
 sections:
 - name: Education

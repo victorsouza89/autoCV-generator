@@ -189,7 +189,7 @@ def define_layout(templatecv, data_cv):
             %------------------------------------------------
             
             \ifthenelse{\equal{\aboutme}{}}{}{
-                \profilesection{About me}
+                \profilesection{"""+data_cv['about']['name']+r"""}
                 \begin{flushleft}
                     \aboutme
                 \end{flushleft}
@@ -197,7 +197,7 @@ def define_layout(templatecv, data_cv):
 
             %------------------------------------------------
 
-            \profilesection{Skills}
+            \profilesection{"""+data_cv['skills']['name']+r"""}
             
             
 
@@ -360,8 +360,6 @@ def fill_cv(doc, data_cv):
             the_list+=r"\end{twenty"+extra+"} \n"
             doc.append(NoEscape(the_list))
 
-
-
 def find(d, tag):
     for k, v in list(d.items()):
         if isinstance(v, dict):
@@ -381,8 +379,6 @@ def find(d, tag):
                     None
                 d[kk] = d0[kk]
             d[k[:-3]] = d.pop(k)
-            #d = dict(reversed(d.items()))
-
 
 def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
     #order_info = ['date', 'phone', 'mail', 'address', 'linkedin', 'github']
@@ -397,8 +393,14 @@ def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
     
         doc = Document(documentclass=templatecv, lmodern=False, fontenc=None, inputenc=None, textcomp=False, page_numbers=False)
 
-        data_cv['about'] = data_cv['about'][mode]
-        data_cv['skills'] = data_cv['skills'][mode]        
+        try:
+            data_cv['about'] = data_cv['about'][mode]
+        except:
+            data_cv['about'] = data_cv['about']['generic']
+        try:
+            data_cv['skills'] = data_cv['skills'][mode]        
+        except:
+            data_cv['skills'] = data_cv['skills']['generic']
 
         sections = {d['type']:d for d in data_cv['sections']}
         data_cv['sections'] = [sections[k] for k in order_sections]
@@ -408,8 +410,9 @@ def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
   
     doc.generate_pdf('cv_'+mode+language, clean_tex=clean_tex, compiler='pdflatex')
 
+
 if __name__ == '__main__':
-    languages = ["_en"]
+    languages = ["_en", "_fr"]
     modes = ["generic", "comp", "controle", "math"]
     order_sections = ['education', 'work', 'projects', 'awards']
     order_info = ['date', 'phone', 'mail', 'linkedin', 'github']
