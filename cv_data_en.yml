@@ -57,6 +57,40 @@ about:
 skills:
   name: Skills
 
+  list: 
+  - Python
+  - \LaTeX
+  - Matlab
+  - Simulink
+  - Linux
+  - Git
+  - R
+  - Java
+  - C++
+  - AutoIt
+  - BASIC
+  - Web developing
+  - PHP
+  - HTML
+  - CSS
+  - SQL
+  - JavaScript
+  - data analysis
+  - neural nets
+  - Pandas
+  - Numpy
+  - Tensforflow
+  - Keras
+  - Mathematical Background
+  - Control's Systems
+  - Automata
+  - Discrete-Event's Systems
+  - Languages
+  - Portuguese (mother tongue)
+  - English
+  - French
+  - Spanish.
+
   generic: |
     Multiple experiences on \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt and BASIC.
     \\ ~ \\
@@ -92,13 +126,19 @@ sections:
 
   - institution: CentraleSupélec
     course: Engineering, with mention in Control
+    GPA: 3.65/4
     location: Gif-Sur-Yvette (FR)
     when: 2021-2023
     long_description: |
       Program focused on Critical Systems, Formal Verification, Formal Systems and Model Checking; Classical and Neoclassical Economics; Optimization and Machine Learning; Project Management; Astrophysics, Quantum Physics, Relativity and Particle Physics; Advanced Probabilities, Stochastic Finance, Financial Markets and Risk Modelling; Cryptology and Cryptography; Modeling, Analysis and Control of Complex Systems.
 
   - institution: UFSC - Universidade Federal de Santa Catarina
-    course: Control and Automation Engineering \\ PAM - Advanced Mathematics Program
+    course: 
+    - Control and Automation Engineering 
+    - PAM - Advanced Mathematics Program
+    GPA: 
+    - 3.58/4 
+    - 3.86/4
     location: Florianópolis (BR)
     when: 2018-2023
     long_description: |

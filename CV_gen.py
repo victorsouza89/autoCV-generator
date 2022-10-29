@@ -45,6 +45,13 @@ def define_layout(templatecv, data_cv):
     \RequirePackage{parskip}
     \RequirePackage{fontawesome}
     \renewcommand*{\faicon}[1]{\makebox[1.5em][c]{\csname faicon@#1\endcsname}}
+
+
+    \usepackage{tcolorbox}
+    \newtcbox{\entoure}[1][white]{on line,
+    arc=2pt,colback=#1!10!white,colframe=#1!50!black,
+    before upper={\rule[-3pt]{0pt}{10pt}},boxrule=1pt,
+    boxsep=3pt,left=0pt,right=0pt,top=1.5pt,bottom=0pt}
     """
     doc.append(NoEscape(packages))
 
@@ -333,7 +340,12 @@ def fill_cv(doc, data_cv):
     aboutme = data_cv['about']
     doc.append(NoEscape(r"\aboutme{"+aboutme+r"}"))
 
-    skills = data_cv['skills']
+    if isinstance(data_cv['skills'], list):
+        skills = ''
+        for s in data_cv['skills']:
+            skills += r'\entoure{'+str(s)+'} '
+    else: 
+        skills = data_cv['skills']
     doc.append(NoEscape(r"\skillstext{"+skills+"}"))
     doc.append(NoEscape(r"\makeprofile"))
 
@@ -348,7 +360,22 @@ def fill_cv(doc, data_cv):
 
                 if dd['type']=='education':
                     i['title']=i['institution']
-                    i['description']=i['course']
+                    i['description'] = ''
+                    if not isinstance(i['course'], list):
+                        i['course'] = [i['course']]
+                    for n in range(len(i['course'])):
+                        c = i['course'][n]
+                        i['description'] += c
+                        try:
+                            if data_cv['gpa']:
+                                if not isinstance(i['GPA'], list):
+                                    i['GPA'] = [i['GPA']]
+                                i['description'] += r' \hspace*{\fill} GPA: ' + i['GPA'][n]
+                        except:
+                            None
+                        i['description'] += r'\\'
+                    i['description'] = i['description'][:-2]
+                    
                 elif dd['type']=='work':
                     i['description']= r"\textit{\textcolor{gray}{"+i['subtitle']+r"}} \\ "+ i['short_description']
                 elif dd['type']=='projects':
@@ -383,9 +410,7 @@ def find(d, tag):
                 d[kk] = d0[kk]
             d[k[:-3]] = d.pop(k)
 
-def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
-    #order_info = ['date', 'phone', 'mail', 'address', 'linkedin', 'github']
-
+def generate_cv(language="_en", mode="generic", order_sections=['education', 'work', 'projects', 'awards'], order_info=['date', 'phone', 'mail', 'linkedin', 'github', 'address'], gpa=False, clean_tex=True):
     with open('cv_data'+language+'.yml', 'r', encoding='utf-8') as f:
         data_cv = yaml.safe_load(f)
         sections = {d['type']:d for d in data_cv['more_info']}
@@ -407,6 +432,7 @@ def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
 
         sections = {d['type']:d for d in data_cv['sections']}
         data_cv['sections'] = [sections[k] for k in order_sections]
+        data_cv['gpa'] = gpa
 
         fill_cv(doc, data_cv)
 
@@ -417,10 +443,16 @@ def generate_cv(language, mode, order_sections, order_info, clean_tex=True):
 if __name__ == '__main__':
     languages = ["_en", "_fr"]
     modes = ["generic", "comp", "controle", "math"]
+    modes = ["comp"]
     order_sections = ['education', 'work', 'projects', 'awards']
     order_info = ['date', 'phone', 'mail', 'linkedin', 'github']#, 'address']
+    gpa = True
     
     for language in languages:
         for mode in modes:
-            generate_cv(language, mode, order_sections, order_info)
+            generate_cv(language, mode, order_sections, order_info, gpa)
             os.remove("templatecv.cls")
+
+# todo
+# - photo on\off
+# - skills as list
