@@ -1,29 +1,29 @@
 basic_info:
   photo: photo.jpeg
   name: Victor Fernando \\ Lopes de Souza
-  jobtitle: Élève-Ingénieur \\ CentraleSupélec
+  jobtitle: Élève-Ingénieur à \\ CentraleSupélec
 
 more_info:
   - date: 8 juillet 1999, Brésilien
-    icon: Mundus
+    icon: faHome
     type: date
   - phone: +33 0665923179
-    icon: Telefon
+    icon: faPhone
     type: phone
-  - mail: victorflosouza@gmail.com
-    icon: Letter
+  - mail: victorfer.lopsouza@student-cs.fr
+    icon: faEnvelope
     href: mail
     type: mail
   - linkedin: linkedin.com/in/victorflosouza
-    icon: Info
+    icon: faLinkedin
     href: site
     type: linkedin
   - github: github.com/victorsouza89
-    icon: Moon
+    icon: faGithub
     href: site
     type: github
   - address: 1, rue Joliot Curie \newline 91190 Gif-Sur-Yvette, France
-    icon: Letter
+    icon: faBuilding
     type: address
 
 about:
@@ -44,7 +44,7 @@ about:
     \\ ~ \\
     À la recherche d'un stage de fin d'études débutant en mai 2023. 
     \\ ~ \\
-    Enthousiaste de mathématiques, de modélisation de systèmes, de contrôle de systèmes et d'automatisation discrète.
+    Enthousiaste de mathématiques, de modélisation de systèmes, de contrôle de systèmes et de logique temporelle.
 
   math: | # Mathematical Modeling, Blockchain and Finance
     Passionné par l'innovation et la technologie. Intéressé par l'approche de problèmes complexes et la découverte de concepts complexes.

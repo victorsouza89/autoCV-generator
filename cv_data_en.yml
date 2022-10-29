@@ -5,25 +5,25 @@ basic_info:
 
 more_info:
   - date: 8 July 1999, Brazilian
-    icon: Mundus
+    icon: faHome
     type: date
   - phone: +33 0665923179
-    icon: Telefon
+    icon: faPhone
     type: phone
-  - mail: victorflosouza@gmail.com
-    icon: Letter
+  - mail: victorfer.lopsouza@student-cs.fr
+    icon: faEnvelope
     href: mail
     type: mail
   - linkedin: linkedin.com/in/victorflosouza
-    icon: Info
+    icon: faLinkedin
     href: site
     type: linkedin
   - github: github.com/victorsouza89
-    icon: Moon
+    icon: faGithub
     href: site
     type: github
   - address: 1, rue Joliot Curie \newline 91190 Gif-Sur-Yvette, France
-    icon: Letter
+    icon: faBuilding
     type: address
 
 about:
@@ -45,7 +45,7 @@ about:
     \\ ~ \\
     Looking for a final year internship starting in May 2023. 
     \\ ~ \\
-    Enthusiast of Mathematics, System Modeling, Control Systems and Discrete Automation.
+    Enthusiast of Mathematics, System Modeling, Control Systems and Temporal Logic.
 
   math: | # Mathematical Modeling, Blockchain and Finance
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.

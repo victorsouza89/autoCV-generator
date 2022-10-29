@@ -43,6 +43,8 @@ def define_layout(templatecv, data_cv):
     \RequirePackage{pgffor}
     \RequirePackage{marvosym}
     \RequirePackage{parskip}
+    \RequirePackage{fontawesome}
+    \renewcommand*{\faicon}[1]{\makebox[1.5em][c]{\csname faicon@#1\endcsname}}
     """
     doc.append(NoEscape(packages))
 
@@ -101,7 +103,7 @@ def define_layout(templatecv, data_cv):
     %\newcommand{\cvdate}[1]{\renewcommand{\cvdate}{#1}}
 
     % Command for printing the contact information icons
-    \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
+    \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=-1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
     % Command for printing skill progress bars
     \newcommand\skills[1]{ 
@@ -162,7 +164,7 @@ def define_layout(templatecv, data_cv):
 		%------------------------------------------------
 
             \renewcommand{\arraystretch}{1.6}
-            \begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
+            \begin{tabular}{p{0.5cm} @{\hskip 0.25cm}p{7cm}}
             """
 
     for d in data_cv['more_info']:
@@ -179,7 +181,7 @@ def define_layout(templatecv, data_cv):
             except:
                 d0 = r"\cv"+d0
                 d = d0
-            sidebar_layout += r"\ifthenelse{\equal{"+d0+r"}{}}{}{\textsc{\Large\icon{\ "[:-1]+icon+r"}} & "+d+r"\\}"+"\n"
+            sidebar_layout += r"\ifthenelse{\equal{"+d0+r"}{}}{}{\textsc{\icon{\ "[:-1]+icon+r"}} & "+d+r"\\}"+"\n"
     sidebar_layout = sidebar_layout[:-4]+'}'
 
     sidebar_layout += r"""
@@ -191,6 +193,7 @@ def define_layout(templatecv, data_cv):
             \ifthenelse{\equal{\aboutme}{}}{}{
                 \profilesection{"""+data_cv['about']['name']+r"""}
                 \begin{flushleft}
+                    
                     \aboutme
                 \end{flushleft}
             }
@@ -415,7 +418,7 @@ if __name__ == '__main__':
     languages = ["_en", "_fr"]
     modes = ["generic", "comp", "controle", "math"]
     order_sections = ['education', 'work', 'projects', 'awards']
-    order_info = ['date', 'phone', 'mail', 'linkedin', 'github']
+    order_info = ['date', 'phone', 'mail', 'linkedin', 'github']#, 'address']
     
     for language in languages:
         for mode in modes:
