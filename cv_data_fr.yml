@@ -55,28 +55,68 @@ about:
 
 skills:
   name: Compétences
-  
-  generic: |
-    Multiples expériences sur \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt et BASIC.
-    \\ ~ \\
-    Expérience en matière de \textbf{développement web} en utilisant PHP, HTML, CSS, SQL et \textbf{JavaScript}.
-    \\ ~ \\
-    Expérience en matière de Data Analysis et de Neural Nets avec \textbf{Pandas}, Numpy, Tensforflow et \textbf{Keras}.
-    \\ ~ \\
-    Bon \textbf{Formation mathématique} et connaissances en \textbf{Systèmes de contrôle}, automates et \textbf{Systèmes à événements discrets}.
-    \\ ~ \\
-    \textbf{Langues:} Portugais, Anglais, Français et Espagnol.
 
-  controle: | # Controle Teórico e Sistemas Complexos
-    Multiples expériences sur \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt et BASIC.
-    \\ ~ \\
-    Bon \textbf{Formation mathématique} et connaissances en \textbf{Systèmes de contrôle}, automates et \textbf{Systèmes à événements discrets}.
-    \\ ~ \\
-    Expérience en matière de Data Analysis et de Neural Nets avec \textbf{Pandas}, Numpy, Tensforflow et \textbf{Keras}.
-    \\ ~ \\
-    Expérience en matière de \textbf{développement web} en utilisant PHP, HTML, CSS, SQL et \textbf{JavaScript}.
-    \\ ~ \\
-    \textbf{Langues:} Portugais, Anglais, Français et Espagnol.
+  generic:
+    prog:
+      name: Développement et Logiciels
+      items:
+      - Python
+      - \LaTeX
+      - Matlab
+      - Simulink
+      - Linux
+      - Git
+      - R
+      - Java
+      - C++
+      - PHP
+      - SQL
+      - JavaScript
+      - Pandas
+      - Numpy
+      - Tensforflow
+      - Keras
+
+    acad:
+      name: Formation Académique
+      items:
+      - Systèmes de Contrôle
+      - Algorithmes
+      - Optimisation
+      - Logique Temporelle
+      - Modèles Probabilistes
+      - Automates
+
+    langs:
+      name: Langues
+      items:
+      - Portugais (natif)
+      - Anglais (C1)
+      - Français (B2)
+      - Espagnol (B2)
+
+  text:
+    generic: |
+      Multiples expériences sur \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt et BASIC.
+      \\ ~ \\
+      Expérience en matière de \textbf{développement web} en utilisant PHP, HTML, CSS, SQL et \textbf{JavaScript}.
+      \\ ~ \\
+      Expérience en matière de Data Analysis et de Neural Nets avec \textbf{Pandas}, Numpy, Tensforflow et \textbf{Keras}.
+      \\ ~ \\
+      Bon \textbf{Formation mathématique} et connaissances en \textbf{Systèmes de contrôle}, automates et \textbf{Systèmes à événements discrets}.
+      \\ ~ \\
+      \textbf{Langues:} Portugais, Anglais, Français et Espagnol.
+
+    controle: | # Controle Teórico e Sistemas Complexos
+      Multiples expériences sur \textbf{Python}, \LaTeX, \textbf{Matlab}, Simulink, Linux, Git, R, Ladder, Java, \textbf{C++}, AutoIt et BASIC.
+      \\ ~ \\
+      Bon \textbf{Formation mathématique} et connaissances en \textbf{Systèmes de contrôle}, automates et \textbf{Systèmes à événements discrets}.
+      \\ ~ \\
+      Expérience en matière de Data Analysis et de Neural Nets avec \textbf{Pandas}, Numpy, Tensforflow et \textbf{Keras}.
+      \\ ~ \\
+      Expérience en matière de \textbf{développement web} en utilisant PHP, HTML, CSS, SQL et \textbf{JavaScript}.
+      \\ ~ \\
+      \textbf{Langues:} Portugais, Anglais, Français et Espagnol.
 
 sections:
 - name: Éducation

@@ -86,11 +86,11 @@ def define_layout(templatecv, data_cv):
     \newlength{\SectionTitleLength} % Define a new length to hold the width of the section title
     \newcommand{\profilesection}[1]{%
         \setlength\TotalSectionLength{\linewidth}% Set the total line width
-        \settowidth{\SectionTitleLength}{\huge #1 }% Calculate the width of the section title
+        \settowidth{\SectionTitleLength}{\LARGE #1 }% Calculate the width of the section title
         \addtolength\TotalSectionLength{-\SectionTitleLength}% Subtract the section title width from the total width
         \addtolength\TotalSectionLength{-2.22221pt}% Modifier to remove overfull box warning
         \vspace{8pt}% Whitespace before the section title
-        {\color{black!80} \huge #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
+        {\color{black!80} \LARGE #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
     }
 
     % Define custom commands for CV info
@@ -340,10 +340,14 @@ def fill_cv(doc, data_cv):
     aboutme = data_cv['about']
     doc.append(NoEscape(r"\aboutme{"+aboutme+r"}"))
 
-    if isinstance(data_cv['skills'], list):
+    if isinstance(data_cv['skills'], dict):
         skills = ''
-        for s in data_cv['skills']:
-            skills += r'\entoure{'+str(s)+'} '
+        for k in data_cv['skills']:
+            sks = data_cv['skills'][k]
+            skills += sks['name']+r' \\ \vspace{1px}'
+            for s in sks['items']:
+                skills += r'\entoure{'+str(s)+'} '
+            skills += r' \\ ~ \\ '
     else: 
         skills = data_cv['skills']
     doc.append(NoEscape(r"\skillstext{"+skills+"}"))
@@ -410,7 +414,7 @@ def find(d, tag):
                 d[kk] = d0[kk]
             d[k[:-3]] = d.pop(k)
 
-def generate_cv(language="_en", mode="generic", order_sections=['education', 'work', 'projects', 'awards'], order_info=['date', 'phone', 'mail', 'linkedin', 'github', 'address'], gpa=False, clean_tex=True):
+def generate_cv(language="_en", mode="generic", textskills = False, order_sections=['education', 'work', 'projects', 'awards'], order_info=['date', 'phone', 'mail', 'linkedin', 'github', 'address'], gpa=False, clean_tex=True):
     with open('cv_data'+language+'.yml', 'r', encoding='utf-8') as f:
         data_cv = yaml.safe_load(f)
         sections = {d['type']:d for d in data_cv['more_info']}
@@ -425,10 +429,13 @@ def generate_cv(language="_en", mode="generic", order_sections=['education', 'wo
             data_cv['about'] = data_cv['about'][mode]
         except:
             data_cv['about'] = data_cv['about']['generic']
+        if textskills:
+            data_cv['skills'] = data_cv['skills']['text']
         try:
-            data_cv['skills'] = data_cv['skills'][mode]        
+            data_cv['skills'] = data_cv['skills'][mode]
         except:
             data_cv['skills'] = data_cv['skills']['generic']
+         
 
         sections = {d['type']:d for d in data_cv['sections']}
         data_cv['sections'] = [sections[k] for k in order_sections]
@@ -443,14 +450,14 @@ def generate_cv(language="_en", mode="generic", order_sections=['education', 'wo
 if __name__ == '__main__':
     languages = ["_en", "_fr"]
     modes = ["generic", "comp", "controle", "math"]
-    modes = ["comp"]
+    textskills = False
     order_sections = ['education', 'work', 'projects', 'awards']
     order_info = ['date', 'phone', 'mail', 'linkedin', 'github']#, 'address']
     gpa = True
     
     for language in languages:
         for mode in modes:
-            generate_cv(language, mode, order_sections, order_info, gpa)
+            generate_cv(language, mode, textskills, order_sections, order_info, gpa)
             os.remove("templatecv.cls")
 
 # todo
