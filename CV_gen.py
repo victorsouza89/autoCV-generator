@@ -86,11 +86,11 @@ def define_layout(templatecv, data_cv):
     \newlength{\SectionTitleLength} % Define a new length to hold the width of the section title
     \newcommand{\profilesection}[1]{%
         \setlength\TotalSectionLength{\linewidth}% Set the total line width
-        \settowidth{\SectionTitleLength}{\LARGE #1 }% Calculate the width of the section title
+        \settowidth{\SectionTitleLength}{\Large #1 }% Calculate the width of the section title
         \addtolength\TotalSectionLength{-\SectionTitleLength}% Subtract the section title width from the total width
         \addtolength\TotalSectionLength{-2.22221pt}% Modifier to remove overfull box warning
         \vspace{8pt}% Whitespace before the section title
-        {\color{black!80} \LARGE #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
+        {\color{black!80} \Large #1 \rule[0.15\baselineskip]{\TotalSectionLength}{1pt}}% Print the title and auto-width rule
     }
 
     % Define custom commands for CV info
@@ -344,7 +344,7 @@ def fill_cv(doc, data_cv):
         skills = ''
         for k in data_cv['skills']:
             sks = data_cv['skills'][k]
-            skills += sks['name']+r' \\ \vspace{1px}'
+            skills += r'\textbf{' + sks['name']+r'} \\ \vspace{1px}'
             for s in sks['items']:
                 skills += r'\entoure{'+str(s)+'} '
             skills += r' \\ ~ \\ '
@@ -452,7 +452,9 @@ if __name__ == '__main__':
     modes = ["generic", "comp", "controle", "math"]
     textskills = False
     order_sections = ['education', 'work', 'projects', 'awards']
-    order_info = ['date', 'phone', 'mail', 'linkedin', 'github']#, 'address']
+    #order_info = ['date', 'phone', 'mail', 'linkedin', 'github', 'address']
+    #order_info = ['date', 'phone', 'mail', 'linkedin', 'github']
+    order_info = ['date', 'phone', 'mail', 'linkedin', 'address']
     gpa = True
     
     for language in languages:

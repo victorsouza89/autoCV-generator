@@ -4,8 +4,8 @@ basic_info:
   jobtitle: Élève-Ingénieur à \\ CentraleSupélec
 
 more_info:
-  - date: 8 juillet 1999, Brésilien
-    icon: faHome
+  - date: 8 juillet 1999, 23 ans
+    icon: faInfo
     type: date
   - phone: +33 0665923179
     icon: faPhone
@@ -22,8 +22,8 @@ more_info:
     icon: faGithub
     href: site
     type: github
-  - address: 1, rue Joliot Curie \newline 91190 Gif-Sur-Yvette, France
-    icon: faBuilding
+  - address: 1, rue Joliot Curie, 3EG007 \newline 91190 Gif-Sur-Yvette, France
+    icon: faHome
     type: address
 
 about:
@@ -158,19 +158,19 @@ sections:
 - name: Expérience Professionnelle
   type: work
   items:
-  - title: Chercheur étudiant en Neural Networks
+  - title: Chercheur Étudiant en Neural Networks
     subtitle: EMBRAPII, en partenariat avec Central Energia (R\&D sur trading)
     location: Florianópolis (BR)
     when: 2020-2021
     short_description: Travail sur la construction, l'entraînement et l'évaluation de réseaux LSTM concernant la prédiction de données de précipitations
 
-  - title: Chercheur étudiant en Topologie Algébrique
+  - title: Chercheur Étudiant en Topologie Algébrique
     subtitle: IMPA (Institut brésilien de mathématiques pures et appliquées)
     location: Florianópolis (BR)
     when: 2018-2021
     short_description: Recherche sur des sujets liés à la théorie géométrique des groupes
     
-  - title: Professeur adjoint de calcul
+  - title: Tuteur de Calcul
     subtitle: Département de mathématiques, UFSC
     location: Florianópolis (BR)
     when: 2018–2019
