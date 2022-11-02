@@ -22,7 +22,7 @@ more_info:
     icon: faGithub
     href: site
     type: github
-  - address: 1, rue Joliot Curie, 3EG007 \newline 91190 Gif-Sur-Yvette, France
+  - address: 91190 Gif-Sur-Yvette, France
     icon: faHome
     type: address
 
