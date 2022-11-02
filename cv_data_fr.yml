@@ -85,7 +85,8 @@ skills:
       - Optimisation
       - Logique Temporelle
       - Modèles Probabilistes
-      - Automates
+      #- Automates
+      - Algèbre
 
     langs:
       name: Langues
