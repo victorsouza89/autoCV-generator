@@ -1,16 +1,16 @@
 basic_info:
   photo: photo.jpeg
   name: Victor Fernando \\ Lopes de Souza
-  jobtitle: Engineering Student at \\ CentraleSupélec
+  jobtitle: Engineering Student at \\ UFSC and CentraleSupélec
 
 more_info:
   - date: 8 July 1999, Brazilian
     icon: faHome
     type: date
-  - phone: +33 0665923179
+  - phone: +55 48988142431
     icon: faPhone
     type: phone
-  - mail: victorfer.lopsouza@student-cs.fr
+  - mail: victorflosouza@gmail.com
     icon: faEnvelope
     href: mail
     type: mail
@@ -33,12 +33,12 @@ about:
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
     Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning, System Modeling and Control, Philosophy, Quantum Physics, Financial Markets, Cybersecurity, Blockchain and Discrete Automation.
 
-  comp: | # IA et ML et Cybersécurité
+  comp: | # IA et ML
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
     \\ ~ \\
-    Looking for a final year internship starting in May 2023. 
+    Looking for a summer internship in 2024. 
     \\ ~ \\
-    Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning and Cybersecurity.
+    Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning and Stochastic Systems.
 
   controle: | # Controle Teórico e Sistemas Complexos
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
@@ -93,7 +93,7 @@ skills:
       items:
       - Portuguese (native)
       - English (C1)
-      - French (B2)
+      - French (C1)
       - Spanish (B2)
 
   text:
@@ -123,21 +123,6 @@ sections:
 - name: Education
   type: education
   items:
-  - institution: Université Paris-Saclay
-    course: Master in Systems, Signals and Image Processing
-    location: Gif-Sur-Yvette (FR)
-    when: 2022-2023
-    long_description: |
-      .
-
-  - institution: CentraleSupélec
-    course: Engineering, with mention in Control
-    GPA: 3.65/4
-    location: Gif-Sur-Yvette (FR)
-    when: 2021-2023
-    long_description: |
-      Program focused on Critical Systems, Formal Verification, Formal Systems and Model Checking; Classical and Neoclassical Economics; Optimization and Machine Learning; Project Management; Astrophysics, Quantum Physics, Relativity and Particle Physics; Advanced Probabilities, Stochastic Finance, Financial Markets and Risk Modelling; Cryptology and Cryptography; Modeling, Analysis and Control of Complex Systems.
-
   - institution: UFSC - Universidade Federal de Santa Catarina
     course: 
     - Control and Automation Engineering 
@@ -146,11 +131,26 @@ sections:
     - 3.58/4 
     - 3.86/4
     location: Florianópolis (BR)
-    when: 2018-2023
+    when: 2018-2024
     long_description: |
       The regular program is focused on Signals, Systems, and Classical and Modern Control Theory; Informatics, Data Structures, Software Engineering, Algorithms and Artificial Intelligence; Discrete Automation and Discrete Event Systems.
 
       Followed also the PAM (Advanced Mathematics Program), focused on Advanced Calculus, Linear Algebra, ODEs, Real Analysis, Complex Analysis, Functional Analysis, Topology and Abstract Algebra.
+
+  - institution: CentraleSupélec
+    course: Engineering, with mention in Control
+    GPA: 3.65/4
+    location: Gif-Sur-Yvette (FR)
+    when: 2021-2023
+    long_description: |
+      Program focused on Critical Systems, Formal Verification, Formal Systems and Model Checking; Classical and Neoclassical Economics; Optimization and Machine Learning; Project Management; Astrophysics, Quantum Physics, Relativity and Particle Physics; Advanced Probabilities, Stochastic Finance, Financial Markets and Risk Modelling; Cryptology and Cryptography; Modeling, Analysis and Control of Complex Systems.
+  
+  - institution: Université Paris-Saclay
+    course: Master in Systems, Signals and Image Processing
+    location: Gif-Sur-Yvette (FR)
+    when: 2022-2023
+    long_description: |
+      .
 
   - institution: Paris IV - Sorbonne Université
     course: Bachelor's degree in Philosophy
@@ -172,6 +172,16 @@ sections:
 - name: Work Experience
   type: work
   items:
+  - title: Data Science Intern
+    subtitle: at Amadeus IT Group
+    location: Nice (FR)
+    when: 2023
+    short_description: Developed an advanced machine learning system integrated into the Amadeus Smart Cache. Prototype submitted for patent application
+    long_description: |
+      Internship focused on developing an advanced machine learning system integrated into the Amadeus Smart Cache. 
+
+      Worked on mathematical modeling of the problem and introduced a framework to analyze the possible solutions. Proposed a metric that considers both Pareto Optimality and the expected random behavior. Utilized a genetic search algorithm for model optimization. The prototype was submitted for patent application.
+
   - title: Student Researcher in Neural Nets
     subtitle: at EMBRAPII, in partnership with Central Energia (R\&D on trading)
     location: Florianópolis (BR)
@@ -194,7 +204,7 @@ sections:
     subtitle: at the Mathematics Department, UFSC
     location: Florianópolis (BR)
     when: 2018–2019
-    short_description: Developed PHP, Shell, BASIC and Kernel scripts to automate tasks related to the management, monitoring and control of the backbone
+    short_description: Hosted office hours to assist undergraduate students
     long_description: |
       Hosted office hours to assist undergraduate students by preparing lessons and helping solve exercises.
 
@@ -202,7 +212,7 @@ sections:
     subtitle: at Oi S.A. (third largest telecommunication company in Latin America)
     location: Florianópolis (BR)
     when: 2016–2017
-    short_description: Developed PHP, Shell, BASIC and Kernel scripts to automate tasks related to the management, monitoring and control of the backbone
+    short_description: Developed PHP, Shell, BASIC and Kernel scripts
     long_description: |
       Developed PHP, Shell, BASIC and Kernel scripts for automatization of tasks related to the management, monitoring and diagnosis of the backbone, as well as web systems for control and diagnosis of telecommunication equipment. The position also highly demanded the management, maintenance and development of MySQL databases.
 
@@ -220,17 +230,17 @@ sections:
   - title: Exploring portfolio optimization methods, with BNP
     location: Gif-Sur-Yvette (FR)
     when: 2022
-    short_description: Construction, Implementation and Evaluation of different portfolio allocation methods
+    short_description: Implementation and Evaluation of some portfolio allocation methods
 
   - title: System for inform on cancer, with Health Guide AI
     location: Gif-Sur-Yvette (FR)
     when: 2022
     short_description: Testing of different recommendation algorithms for this purpose
 
-  - title: 'Neural Nets: Attacks and Robustness, with SystemX'
-    location: Gif-Sur-Yvette (FR)
-    when: 2021-2022
-    short_description: Study and implementation of some attack methods on NN systems
+  #- title: 'Neural Nets: Attacks and Robustness, with SystemX'
+  #  location: Gif-Sur-Yvette (FR)
+  #  when: 2021-2022
+  #  short_description: Study and implementation of some attack methods on NN systems
 
 
 

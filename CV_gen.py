@@ -454,8 +454,8 @@ if __name__ == '__main__':
     order_sections = ['education', 'work', 'projects', 'awards']
     #order_info = ['date', 'phone', 'mail', 'linkedin', 'github', 'address']
     #order_info = ['date', 'phone', 'mail', 'linkedin', 'github']
-    order_info = ['date', 'address', 'phone', 'mail']#, 'github']
-    gpa = True
+    order_info = ['date', 'phone', 'mail', 'github']
+    gpa = False
     
     for language in languages:
         for mode in modes:
