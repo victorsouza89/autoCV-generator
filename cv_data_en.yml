@@ -36,7 +36,7 @@ about:
   comp: | # IA et ML
     Passionate for innovation and technology. Interested in approaching complex problems and grasping complex concepts.
     \\ ~ \\
-    Looking for a summer internship in 2024. 
+    Looking for a PhD position starting in September 2024.
     \\ ~ \\
     Enthusiast of Mathematics, Computing, Artificial Intelligence, Machine Learning and Stochastic Systems.
 
@@ -176,7 +176,7 @@ sections:
     subtitle: at Amadeus IT Group
     location: Nice (FR)
     when: 2023
-    short_description: Developed an advanced machine learning system integrated into the Amadeus Smart Cache. Prototype submitted for patent application
+    short_description: Developed an advanced machine learning system integrated into the Amadeus Smart Cache. Prototype submitted for patent application.
     long_description: |
       Internship focused on developing an advanced machine learning system integrated into the Amadeus Smart Cache. 
 
@@ -186,7 +186,7 @@ sections:
     subtitle: at EMBRAPII, in partnership with Central Energia (R\&D on trading)
     location: Florianópolis (BR)
     when: 2020-2021
-    short_description: Worked on building, training, and evaluating LSTM networks regarding the prediction of precipitation data for energy trading
+    short_description: Worked on building, training, and evaluating LSTM networks regarding the prediction of precipitation data for energy trading.
     long_description: |
       Worked mainly on building, training, and evaluating LSTM networks regarding the prediction of precipitation data in the context of developing a smart system for energy trading.
 
@@ -196,7 +196,7 @@ sections:
     subtitle: at IMPA (Brazilian Institute of Pure and Applied Mathematics)
     location: Florianópolis (BR)
     when: 2018-2021
-    short_description: Research on advanced topics related to Geometric Group Theory
+    short_description: Research on advanced topics related to Geometric Group Theory. Prepared an \href{https://www.youtube.com/watch?v=0rnvqOdV6x8}{introduction video} and presented it in a congress in Paris.
     long_description: |
       As a medalist in a mathematical Olympiad admitted to university, took advanced courses on fundamental topics in mathematics and worked on research on advanced topics related to Geometric Group Theory. Prepared an introduction to algebraic topology, in which constructs, states and proves a theorem on the number of ends of a finitely generated group.
 
@@ -204,7 +204,7 @@ sections:
     subtitle: at the Mathematics Department, UFSC
     location: Florianópolis (BR)
     when: 2018–2019
-    short_description: Hosted office hours to assist undergraduate students
+    short_description: Hosted office hours to assist undergraduate students.
     long_description: |
       Hosted office hours to assist undergraduate students by preparing lessons and helping solve exercises.
 
@@ -212,7 +212,7 @@ sections:
     subtitle: at Oi S.A. (third largest telecommunication company in Latin America)
     location: Florianópolis (BR)
     when: 2016–2017
-    short_description: Developed PHP, Shell, BASIC and Kernel scripts
+    short_description: Developed PHP, Shell, BASIC and Kernel scripts.
     long_description: |
       Developed PHP, Shell, BASIC and Kernel scripts for automatization of tasks related to the management, monitoring and diagnosis of the backbone, as well as web systems for control and diagnosis of telecommunication equipment. The position also highly demanded the management, maintenance and development of MySQL databases.
 
